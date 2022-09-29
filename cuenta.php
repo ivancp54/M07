@@ -17,9 +17,12 @@
             $this->diners=$this->diners-$diners;
             return $diners;
         }
+        public function meterDinero ($diners){
+            $this->diners=$this->diners+$diners;
+        }
 
     }
 
-    echo "hola";
+   ?>
 
 
