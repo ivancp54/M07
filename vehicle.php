@@ -6,7 +6,7 @@ class Vehicle{
     private $modelo;
     private $puertas;
     private $motor;
-    private $git;
+    
 
     /**
      * @param $ruedas
