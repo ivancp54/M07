@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
+<?php
+    $db_host = "localhost";
+    $db_nombre = "products";
+    $db_usuario = "root";
+    $db_passwd = "";
 
+    $conexio = mysqli_connect($db_host, $db_usuario, $db_passwd, $db_nombre);
+    $consulta = "SELECT * FROM productos";
+    $productos = mysqli_query($conexio, $consulta);
+
+?>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -22,29 +32,27 @@
     <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-        </tr>
+        <?php foreach ($productos as $i => $product) { ?>
+            <tr>
+                <th scope="row"> <?php echo $i +l ?></th>
+                <td><?php echo $product['Name'] ?> </td>
+                <td><?php echo $product['Description'] ?></td>
+                <td><?php echo $product['Price'] ?></td>
+                <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
+            </tr>
+        <?php } ?>
+
+
+        }
+
+
     </tbody>
     </table>
 </body>
