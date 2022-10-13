@@ -45,6 +45,7 @@
                 <td><?php echo $product['Description'] ?></td>
                 <td><?php echo $product['Price'] ?></td>
                 <td><a href="delete.php?numID=<?php echo $product['numID']?>"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
+                <td><a href="edit.php?numID=<?php echo $product['numID']?>"><button type="button" class="btn btn-outline-primary">EDIT</button></a></td>
 
             </tr>
         <?php } ?>
