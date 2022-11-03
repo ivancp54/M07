@@ -32,11 +32,12 @@
         $nom = $_POST['name'];
         $descripcio = $_POST['description'];
         $preu = $_POST['price'];
-        $sql = "INSERT INTO productos (Name,Description,Price,numID) VALUES('".$_POST['name']."','".$_POST['description']."','".$_POST['price']."','".$numID."')";
+        $sql = "INSERT INTO products (Name,Description,Price,numID) VALUES('".$_POST['name']."','".$_POST['description']."','".$_POST['price']."','".$numID."')";
         $productos = mysqli_query($conexio, $sql);
         header("Location:index.php");
 
     }
+
     
 ?>
 </form>

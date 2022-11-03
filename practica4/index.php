@@ -39,14 +39,12 @@
     <tbody>
         <?php foreach ($productos as $i => $product) { ?>
             <tr>
-                 
                 <td><?php echo $product['numID'] ?> </td>
                 <td><?php echo $product['Name'] ?> </td>
                 <td><?php echo $product['Description'] ?></td>
                 <td><?php echo $product['Price'] ?></td>
                 <td><a href="delete.php?numID=<?php echo $product['numID']?>"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
                 <td><a href="edit.php?numID=<?php echo $product['numID']?>"><button type="button" class="btn btn-outline-primary">EDIT</button></a></td>
-
             </tr>
         <?php } ?>
 
@@ -57,6 +55,7 @@
     </tbody>
     </table>
     <td><a href="add_product.php"><button type="button" class="btn btn-outline-primary">ADD</button></a></td>
+    <td><a href="edit.php"><button type="button" class="btn btn-outline-primary">Edit</button></a></td>
 </body>
 
 </html>

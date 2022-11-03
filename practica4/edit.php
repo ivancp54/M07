@@ -16,7 +16,7 @@
         <label for="price">price:</label>
         <input type="text" name="price" id="price">
     </p>
-    <input type="submit" value="add_product">
+    <input type="submit" value="Change Product">
 
     <?php
     $db_host = "localhost";
@@ -31,7 +31,7 @@
         $nom = $_POST['name'];
         $descripcio = $_POST['description'];
         $preu = $_POST['price'];
-        $sql = "UPDATE `productos` SET `Name`='$nom',`Description`='$descripcion',`Price`='$preu' WHERE numID='$id'";
+        $sql = "UPDATE `products` SET `Name`='$nom',`Description`='$descripcio',`Price`='$preu' WHERE numID='$id'";
         $productos = mysqli_query($conexio, $sql);
         header("Location:index.php");
 
