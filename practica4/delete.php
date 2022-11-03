@@ -1,15 +1,22 @@
+
 <?php
-if (isset($_GET['numID'])){
-    $id = $_GET['numID'];
 
- $db_host = "localhost";
- $db_nombre = "products";
- $db_usuario = "root";
- $db_passwd = "";
+$id = $_GET['id'];
 
- $conexio = mysqli_connect($db_host, $db_usuario, $db_passwd, $db_nombre);
- $sql = "DELETE FROM productos WHERE numID='$id'";
- $productos = mysqli_query($conexio, $sql);
- header("Location:index.php");
+try {
+  $conn = new PDO("mysql:host=localhost;dbname=products", 'root', '');
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // sql to delete a record
+  $sqldel = "DELETE FROM `productos` WHERE `NumID`='$id'";
+
+  // use exec() because no results are returned
+  $conn->query($sqldel);
+  echo "Record deleted successfully";
+} catch(PDOException $e) {
+  echo "<br>" . $e->getMessage();
 }
+Header("location:index.php");
+
 ?>
