@@ -25,7 +25,11 @@ try {
    </tr>
    </thead>
    <tbody>
+<<<<<<< HEAD
    //Se envia la query a la BBDD i es guarda la informacio a product
+=======
+   //S’envia la query a la BBDD i es guarda la informació a product
+>>>>>>> c323b715b8e326f92be9b486c5a2e9f4d2d3c322
    <?php foreach ($myCon->query($sql) as $i => $product){ ?>
        <tr>
            <th scope="row"><?php echo $i +1 ?></th> <!-- augmentem el index i -->
